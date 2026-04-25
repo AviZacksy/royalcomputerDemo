@@ -1,19 +1,1328 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=./royal-computer-institute.html" />
-    <title>Royal Computer Institute</title>
-    <link rel="canonical" href="./royal-computer-institute.html" />
-  </head>
-  <body>
-    <p>
-      Redirecting…
-      <a href="./royal-computer-institute.html">Open site</a>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Computer Institute – Bihar's Premier Computer Training Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --royal: #1a1a2e;
+    --deep: #16213e;
+    --navy: #0f3460;
+    --gold: #e8b84b;
+    --gold-light: #f5d080;
+    --gold-dark: #c49a2a;
+    --cream: #fdf8ef;
+    --white: #ffffff;
+    --text: #2d2d2d;
+    --text-muted: #6b7280;
+    --red-accent: #e63946;
+    --card-bg: #ffffff;
+    --section-alt: #f8f5f0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(26, 26, 46, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232, 184, 75, 0.2);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 15px rgba(232, 184, 75, 0.4);
+  }
+  .nav-logo-text { color: var(--white); }
+  .nav-logo-text strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .nav-logo-text span {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0; right: 0; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+    transform-origin: left;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--royal) !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.02em;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,184,75,0.4); }
+  .nav-cta::after { display: none !important; }
+  .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 6px; }
+  .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 860px) {
+    .nav-links li { width: 100%; }
+    .nav-links a  { display: block; padding: 13px 16px; border-radius: 10px; font-size: 1rem !important; }
+    .nav-links a:hover { background: rgba(232,184,75,0.1); }
+    .nav-links a::after { display: none; }
+    .nav-cta { display: block !important; text-align: center; margin-top: 8px; padding: 14px 20px !important; font-size: 1rem !important; }
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--royal);
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,184,75,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,184,75,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .hero-orb-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(232,184,75,0.15), transparent 70%);
+    top: -100px; right: -100px;
+    animation: float1 8s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(15,52,96,0.8), transparent 70%);
+    bottom: 0; left: 10%;
+    animation: float2 10s ease-in-out infinite;
+  }
+  .hero-orb-3 {
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(232,184,75,0.1), transparent 70%);
+    top: 40%; left: 50%;
+    animation: float1 6s ease-in-out infinite reverse;
+  }
+  @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
+  @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(20px)} }
+
+  /* Bihar map SVG decoration */
+  .hero-map-deco {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    opacity: 0.06;
+    pointer-events: none;
+  }
+  .hero-map-deco svg { width: 420px; height: 420px; }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 80px 5%;
+    max-width: 760px;
+    animation: heroIn 1s ease forwards;
+  }
+  @keyframes heroIn { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,184,75,0.12);
+    border: 1px solid rgba(232,184,75,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+  }
+  .hero-badge-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
+  .hero-badge span { font-size: 0.78rem; color: var(--gold); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 24px;
+  }
+  .hero-title em { color: var(--gold); font-style: normal; }
+  .hero-title .line-accent {
+    display: inline-block;
+    position: relative;
+  }
+  .hero-title .line-accent::after {
+    content: '';
+    position: absolute; bottom: 4px; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 560px;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--royal);
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 30px rgba(232,184,75,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(232,184,75,0.45); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent;
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+  .hero-trust {
+    margin-top: 56px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .hero-trust-avatars {
+    display: flex;
+  }
+  .hero-trust-avatars .av {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 2px solid var(--royal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    margin-left: -10px;
+    background: linear-gradient(135deg, var(--navy), var(--gold-dark));
+  }
+  .hero-trust-avatars .av:first-child { margin-left: 0; }
+  .hero-trust-text { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+  .hero-trust-text strong { color: var(--gold); }
+
+  /* Scroll indicator */
+  .hero-scroll {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.35); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .hero-scroll .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(232,184,75,0.5), transparent); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+  /* ── MARQUEE ── */
+  .marquee-band {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+  }
+  .marquee-item {
+    display: inline-block;
+    padding: 0 32px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--royal);
+  }
+  .marquee-dot { margin: 0 8px; color: var(--royal); opacity: 0.5; }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 5%; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-label span {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold-dark);
+  }
+  .section-label::before, .section-label::after {
+    content: ''; display: block; height: 1px; width: 28px;
+    background: var(--gold-dark);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--royal);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-title em { color: var(--gold-dark); font-style: normal; }
+  .section-subtitle {
+    font-size: 1rem; color: var(--text-muted); line-height: 1.7;
+    max-width: 560px; margin-bottom: 56px;
+  }
+  .section-header { margin-bottom: 56px; }
+
+  /* ── STATS ── */
+  #stats {
+    background: linear-gradient(135deg, var(--royal) 0%, var(--deep) 50%, var(--navy) 100%);
+    padding: 80px 5%;
+    position: relative;
+    overflow: hidden;
+  }
+  #stats::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(232,184,75,0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 50%, rgba(15,52,96,0.5) 0%, transparent 50%);
+  }
+  .stats-grid {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .stat-card {
+    padding: 48px 32px;
+    text-align: center;
+    border-right: 1px solid rgba(232,184,75,0.12);
+    position: relative;
+  }
+  .stat-card:last-child { border-right: none; }
+  .stat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 40px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .stat-number sup { font-size: 2rem; vertical-align: super; }
+  .stat-label {
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.55);
+  }
+
+  /* ── COURSES ── */
+  #courses { background: var(--section-alt); }
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .course-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .course-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+  .course-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .course-card:hover::after { transform: scaleX(1); }
+  .course-thumb {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .course-thumb::before {
+    content: '';
+    position: absolute; inset: 0;
+    opacity: 0.9;
+  }
+  .ct-dca::before { background: linear-gradient(135deg, #0f3460, #16213e); }
+  .ct-adca::before { background: linear-gradient(135deg, #1a1a2e, #0f3460); }
+  .ct-tally::before { background: linear-gradient(135deg, #1b4332, #2d6a4f); }
+  .ct-ms::before { background: linear-gradient(135deg, #1e3a5f, #0a4c7a); }
+  .ct-web::before { background: linear-gradient(135deg, #4a0e8f, #7b2d8b); }
+  .ct-python::before { background: linear-gradient(135deg, #614422, #c87533); }
+  .course-thumb span { position: relative; z-index: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); }
+  .course-body { padding: 28px; }
+  .course-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(232,184,75,0.12), rgba(232,184,75,0.05));
+    border: 1px solid rgba(232,184,75,0.25);
+    color: var(--gold-dark);
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px; border-radius: 100px;
+    margin-bottom: 12px;
+  }
+  .course-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-weight: 700;
+    color: var(--royal); margin-bottom: 10px;
+  }
+  .course-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+  .course-meta {
+    display: flex; gap: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .course-meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-muted); }
+  .course-meta-item span { font-size: 1rem; }
+  .course-link {
+    display: flex; align-items: center; gap: 6px;
+    margin-left: auto;
+    color: var(--gold-dark); font-size: 0.82rem; font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .course-link:hover { gap: 10px; }
+
+  /* ── WHY CHOOSE ── */
+  #why {
+    background: var(--royal);
+    position: relative;
+    overflow: hidden;
+  }
+  #why::before {
+    content: '';
+    position: absolute; top: -50%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(232,184,75,0.06), transparent 60%);
+    border-radius: 50%;
+  }
+  #why .section-title { color: var(--white); }
+  #why .section-subtitle { color: rgba(255,255,255,0.55); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .why-features { display: flex; flex-direction: column; gap: 28px; }
+  .why-feature {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    transition: all 0.3s;
+  }
+  .why-feature:hover {
+    background: rgba(232,184,75,0.07);
+    border-color: rgba(232,184,75,0.2);
+    transform: translateX(8px);
+  }
+  .why-feature-icon {
+    width: 52px; height: 52px; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(232,184,75,0.15), rgba(232,184,75,0.05));
+    border: 1px solid rgba(232,184,75,0.2);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+  }
+  .why-feature-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--white); margin-bottom: 6px;
+  }
+  .why-feature-body p { font-size: 0.87rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .why-visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-cert {
+    background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(232,184,75,0.2);
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-cert::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(232,184,75,0.05) 0%, transparent 50%);
+  }
+  .why-cert-seal {
+    width: 100px; height: 100px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.8rem;
+    margin: 0 auto 24px;
+    box-shadow: 0 0 40px rgba(232,184,75,0.3), 0 0 80px rgba(232,184,75,0.15);
+    animation: glow 3s ease-in-out infinite;
+  }
+  @keyframes glow { 0%,100%{box-shadow:0 0 40px rgba(232,184,75,0.3),0 0 80px rgba(232,184,75,0.15)} 50%{box-shadow:0 0 60px rgba(232,184,75,0.5),0 0 120px rgba(232,184,75,0.25)} }
+  .why-cert h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; color: var(--white); margin-bottom: 10px;
+  }
+  .why-cert p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 28px; }
+  .why-cert-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    padding: 6px 14px;
+    background: rgba(232,184,75,0.1);
+    border: 1px solid rgba(232,184,75,0.25);
+    border-radius: 100px;
+    font-size: 0.75rem; color: var(--gold-light); font-weight: 500;
+  }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--cream); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testi-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .testi-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+  .testi-card::before {
+    content: '"';
+    position: absolute; top: 20px; right: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; color: var(--gold);
+    line-height: 1;
+    opacity: 0.15;
+  }
+  .testi-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+  .testi-stars span { color: var(--gold); font-size: 1rem; }
+  .testi-text {
+    font-size: 0.9rem; color: #555; line-height: 1.75;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .testi-info strong { display: block; font-size: 0.9rem; color: var(--royal); }
+  .testi-info span { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ── ADMISSION BANNER ── */
+  #admission {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 40%, #b8860b 100%);
+    padding: 80px 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #admission::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  #admission h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--royal);
+    margin-bottom: 14px;
+    position: relative;
+  }
+  #admission p {
+    font-size: 1.05rem; color: rgba(26,26,46,0.7);
+    margin-bottom: 36px; position: relative;
+  }
+  .btn-dark {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--royal);
+    color: var(--gold);
+    padding: 16px 36px; border-radius: 10px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none; position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+  .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.3); }
+  .admission-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--royal);
+    color: rgba(255,255,255,0.6);
+    padding: 80px 5% 40px;
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute; top: 0; left: 5%; right: 5%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(232,184,75,0.3), transparent);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+  .footer-brand { }
+  .footer-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; margin-bottom: 16px;
+  }
+  .footer-logo-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .footer-logo strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--gold);
+    display: block; line-height: 1.1;
+  }
+  .footer-logo small { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .footer-desc { font-size: 0.87rem; line-height: 1.7; margin-bottom: 24px; }
+  .footer-social { display: flex; gap: 10px; }
+  .social-btn {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .social-btn:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
+  .footer-col h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: 1rem; margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none; font-size: 0.87rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-contact { display: flex; flex-direction: column; gap: 14px; }
+  .contact-item { display: flex; gap: 12px; align-items: flex-start; }
+  .contact-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .contact-text { font-size: 0.85rem; line-height: 1.5; }
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom span { font-size: 0.82rem; }
+  .footer-bottom strong { color: var(--gold); }
+  .footer-bottom-links { display: flex; gap: 24px; }
+  .footer-bottom-links a { color: rgba(255,255,255,0.4); font-size: 0.78rem; text-decoration: none; }
+  .footer-bottom-links a:hover { color: var(--gold); }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE — tablet (≤1024px)
+  ══════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .courses-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid  { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .why-grid     { gap: 40px; }
+    .stats-grid   { grid-template-columns: repeat(2, 1fr); }
+    .stat-card    { border-right: none; border-bottom: 1px solid rgba(232,184,75,0.12); }
+    .stat-card:last-child { border-bottom: none; }
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE — mobile nav breakpoint (≤860px)
+  ══════════════════════════════════════ */
+  @media (max-width: 860px) {
+    /* Nav */
+    .nav-links    { display: none; }
+    .nav-hamburger { display: flex; }
+
+    /* Why grid stacks */
+    .why-grid { grid-template-columns: 1fr; }
+    .why-visual { order: -1; }           /* cert card on top on mobile */
+
+    /* Testimonials → single column */
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE — small tablets / large phones (≤680px)
+  ══════════════════════════════════════ */
+  @media (max-width: 680px) {
+    section { padding: 72px 5%; }
+
+    /* Hero */
+    #hero { min-height: 100svh; }
+    .hero-content { padding: 56px 5% 60px; }
+    .hero-map-deco { display: none; }      /* hide deco on small screens */
+    .hero-orb-1 { width: 280px; height: 280px; }
+    .hero-orb-2 { width: 200px; height: 200px; }
+    .hero-btns  { flex-direction: column; gap: 12px; }
+    .btn-primary,
+    .btn-secondary { width: 100%; justify-content: center; padding: 15px 20px; }
+    .hero-trust { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+    /* Stats */
+    #stats { padding: 60px 5%; }
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    .stat-card { padding: 36px 20px; border-right: 1px solid rgba(232,184,75,0.12); border-bottom: 1px solid rgba(232,184,75,0.12); }
+    .stat-card:nth-child(2n) { border-right: none; }
+    .stat-card:nth-child(3),
+    .stat-card:nth-child(4) { border-bottom: none; }
+    .stat-number { font-size: 3.2rem; }
+
+    /* Courses → single column */
+    .courses-grid { grid-template-columns: 1fr; }
+
+    /* Why features */
+    .why-feature { padding: 18px; }
+    .why-cert { padding: 36px 24px; }
+
+    /* Admission banner */
+    #admission { padding: 60px 5%; }
+    #admission > div { flex-direction: column; }
+    .btn-dark { width: 100%; justify-content: center; }
+    #admission > div > a:last-child { width: 100%; justify-content: center; text-align: center; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
+    .footer-bottom-links { justify-content: center; }
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE — very small phones (≤400px)
+  ══════════════════════════════════════ */
+  @media (max-width: 400px) {
+    nav { padding: 0 4%; }
+    .nav-logo-text span { display: none; }   /* hide tagline to save space */
+
+    section { padding: 60px 4%; }
+    .hero-content { padding: 48px 4% 52px; }
+
+    .hero-badge span { font-size: 0.7rem; }
+    .hero-subtitle  { font-size: 0.95rem; }
+
+    .course-body { padding: 20px; }
+    .course-name { font-size: 1.15rem; }
+
+    .testi-card { padding: 24px; }
+
+    .why-cert { padding: 28px 18px; }
+    .why-cert-badges { gap: 6px; }
+
+    .stat-number { font-size: 2.8rem; }
+    .stat-number sup { font-size: 1.4rem; }
+
+    #admission { padding: 48px 4%; }
+
+    footer { padding: 60px 4% 32px; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">👑</div>
+    <div class="nav-logo-text">
+      <strong>Royal Computer Institute</strong>
+      <span>Bihar's Premier Training Center</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#stats">About</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#admission" class="nav-cta">Enroll Now →</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-map-deco">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100,10 L180,60 L180,140 L100,190 L20,140 L20,60 Z" fill="none" stroke="rgba(232,184,75,1)" stroke-width="1.5"/>
+      <path d="M100,30 L160,70 L160,130 L100,170 L40,130 L40,70 Z" fill="none" stroke="rgba(232,184,75,0.7)" stroke-width="1"/>
+      <path d="M100,50 L140,80 L140,120 L100,150 L60,120 L60,80 Z" fill="none" stroke="rgba(232,184,75,0.4)" stroke-width="0.8"/>
+      <circle cx="100" cy="100" r="5" fill="rgba(232,184,75,0.8)"/>
+      <circle cx="80" cy="75" r="2.5" fill="rgba(232,184,75,0.5)"/>
+      <circle cx="130" cy="90" r="2.5" fill="rgba(232,184,75,0.5)"/>
+      <circle cx="70" cy="115" r="2.5" fill="rgba(232,184,75,0.5)"/>
+      <circle cx="120" cy="130" r="2.5" fill="rgba(232,184,75,0.5)"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Admissions Open 2024–25</span>
+    </div>
+    <h1 class="hero-title">
+      Bihar's Most <em>Trusted</em><br>
+      <span class="line-accent">Computer Institute</span>
+    </h1>
+    <p class="hero-subtitle">
+      Empowering the youth of Bihar with industry-ready computer skills since 2005. 
+      Government-recognized courses, expert faculty, and 100% placement support.
     </p>
-    <script>
-      window.location.replace("./royal-computer-institute.html");
-    </script>
-  </body>
+    <div class="hero-btns">
+      <a href="#courses" class="btn-primary">Explore Courses ✦</a>
+      <a href="#admission" class="btn-secondary">📞 Call Now</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-avatars">
+        <div class="av">👨</div>
+        <div class="av">👩</div>
+        <div class="av">👦</div>
+        <div class="av">👧</div>
+        <div class="av">+</div>
+      </div>
+      <p class="hero-trust-text"><strong>5,000+</strong> students trained &amp; placed across Bihar</p>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="marquee-item">DCA <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">ADCA <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Tally Prime <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">MS Office <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Web Design <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Python Programming <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Govt. Recognized <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">100% Placement <span class="marquee-dot">◆</span></span>
+    &nbsp;&nbsp;&nbsp;
+    <span class="marquee-item">DCA <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">ADCA <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Tally Prime <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">MS Office <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Web Design <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Python Programming <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Govt. Recognized <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">100% Placement <span class="marquee-dot">◆</span></span>
+    &nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-number">5000<sup>+</sup></div>
+      <div class="stat-label">Students Trained</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-number">19<sup>+</sup></div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-number">98<sup>%</sup></div>
+      <div class="stat-label">Pass Rate</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-3">
+      <div class="stat-number">12<sup>+</sup></div>
+      <div class="stat-label">Expert Instructors</div>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section id="courses">
+  <div class="section-header">
+    <div class="section-label"><span>What We Teach</span></div>
+    <h2 class="section-title">Our <em>Popular</em> Courses</h2>
+    <p class="section-subtitle">Comprehensive, job-oriented computer courses designed for Bihar's students. Learn from industry experts and earn government-recognized certificates.</p>
+  </div>
+  <div class="courses-grid">
+    <div class="course-card reveal">
+      <div class="course-thumb ct-dca"><span>💻</span></div>
+      <div class="course-body">
+        <div class="course-tag">Foundation</div>
+        <h3 class="course-name">DCA</h3>
+        <p class="course-desc">Diploma in Computer Applications — your gateway to the digital world. Covers MS Office, internet basics, typing, and more.</p>
+        <div class="course-meta">
+          <div class="course-meta-item"><span>⏱</span> 6 Months</div>
+          <div class="course-meta-item"><span>📜</span> Certified</div>
+          <a href="#admission" class="course-link">Enroll →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-1">
+      <div class="course-thumb ct-adca"><span>🖥️</span></div>
+      <div class="course-body">
+        <div class="course-tag">Advanced</div>
+        <h3 class="course-name">ADCA</h3>
+        <p class="course-desc">Advanced Diploma in Computer Applications. Covers programming, database, advanced Excel, Tally, and accounting software.</p>
+        <div class="course-meta">
+          <div class="course-meta-item"><span>⏱</span> 12 Months</div>
+          <div class="course-meta-item"><span>📜</span> Certified</div>
+          <a href="#admission" class="course-link">Enroll →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-2">
+      <div class="course-thumb ct-tally"><span>📊</span></div>
+      <div class="course-body">
+        <div class="course-tag">Accounting</div>
+        <h3 class="course-name">Tally Prime</h3>
+        <p class="course-desc">Master Tally Prime with GST, TDS, payroll, inventory management, and financial reports. Most in-demand skill for businesses.</p>
+        <div class="course-meta">
+          <div class="course-meta-item"><span>⏱</span> 3 Months</div>
+          <div class="course-meta-item"><span>📜</span> Certified</div>
+          <a href="#admission" class="course-link">Enroll →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal">
+      <div class="course-thumb ct-ms"><span>📝</span></div>
+      <div class="course-body">
+        <div class="course-tag">Productivity</div>
+        <h3 class="course-name">MS Office</h3>
+        <p class="course-desc">Master Word, Excel, PowerPoint, and Outlook. Essential office skills for government jobs, private sector, and entrepreneurship.</p>
+        <div class="course-meta">
+          <div class="course-meta-item"><span>⏱</span> 2 Months</div>
+          <div class="course-meta-item"><span>📜</span> Certified</div>
+          <a href="#admission" class="course-link">Enroll →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-1">
+      <div class="course-thumb ct-web"><span>🌐</span></div>
+      <div class="course-body">
+        <div class="course-tag">Tech Career</div>
+        <h3 class="course-name">Web Design</h3>
+        <p class="course-desc">Build stunning websites with HTML, CSS, JavaScript, and WordPress. Launch a freelancing or full-time career in web development.</p>
+        <div class="course-meta">
+          <div class="course-meta-item"><span>⏱</span> 6 Months</div>
+          <div class="course-meta-item"><span>📜</span> Certified</div>
+          <a href="#admission" class="course-link">Enroll →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-2">
+      <div class="course-thumb ct-python"><span>🐍</span></div>
+      <div class="course-body">
+        <div class="course-tag">Programming</div>
+        <h3 class="course-name">Python</h3>
+        <p class="course-desc">Learn Python from scratch — data types, functions, OOP, file handling, and real-world projects. The most popular language worldwide.</p>
+        <div class="course-meta">
+          <div class="course-meta-item"><span>⏱</span> 4 Months</div>
+          <div class="course-meta-item"><span>📜</span> Certified</div>
+          <a href="#admission" class="course-link">Enroll →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-label" style="--gold-dark:#e8b84b"><span style="color:rgba(232,184,75,0.8)">Why Choose Us</span></div>
+      <h2 class="section-title" style="color:#fff">Bihar's <em style="color:var(--gold)">Most Trusted</em><br>Training Partner</h2>
+      <p class="section-subtitle">We don't just teach — we transform careers. Every student who walks through our doors gets personal attention, practical training, and real placement support.</p>
+      <div class="why-features">
+        <div class="why-feature reveal">
+          <div class="why-feature-icon">🏛️</div>
+          <div class="why-feature-body">
+            <h4>Government Recognized</h4>
+            <p>Our certificates are recognized by state and central government bodies, adding real value to your resume.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal reveal-delay-1">
+          <div class="why-feature-icon">👨‍🏫</div>
+          <div class="why-feature-body">
+            <h4>Expert Faculty</h4>
+            <p>Learn from experienced professionals with 10+ years of industry and teaching experience.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal reveal-delay-2">
+          <div class="why-feature-icon">💼</div>
+          <div class="why-feature-body">
+            <h4>100% Placement Support</h4>
+            <p>Dedicated placement cell with tie-ups with companies across Patna, Bihar, and beyond.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal reveal-delay-3">
+          <div class="why-feature-icon">🕐</div>
+          <div class="why-feature-body">
+            <h4>Flexible Batch Timings</h4>
+            <p>Morning, afternoon, and evening batches — we fit around your schedule, not the other way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual reveal">
+      <div class="why-cert">
+        <div class="why-cert-seal">🏆</div>
+        <h3>Excellence Since 2005</h3>
+        <p>Proud to be Bihar's most awarded and trusted computer training institute, serving students from across the state.</p>
+        <div class="why-cert-badges">
+          <span class="badge">ISO Certified</span>
+          <span class="badge">Govt. Approved</span>
+          <span class="badge">Award Winning</span>
+          <span class="badge">5★ Rated</span>
+        </div>
+        <div style="margin-top:32px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.08); display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+          <div style="text-align:center;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:var(--gold); line-height:1;">30+</div>
+            <div style="font-size:0.72rem; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.1em;">Districts Covered</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:var(--gold); line-height:1;">6+</div>
+            <div style="font-size:0.72rem; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.1em;">Courses Offered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header">
+    <div class="section-label"><span>Student Stories</span></div>
+    <h2 class="section-title">What Our <em>Students Say</em></h2>
+    <p class="section-subtitle">Real words from real students who transformed their careers with Royal Computer Institute.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"After completing ADCA from Royal Computer Institute, I got placed in a company in Patna within 2 months. The teachers are very supportive and the practical training was excellent. Best decision of my life!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);color:var(--gold);">R</div>
+        <div class="testi-info">
+          <strong>Rahul Kumar</strong>
+          <span>ADCA Graduate · Patna</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Maine yahan se Tally Prime course kiya aur ab main ek CA firm mein kaam kar rahi hoon. Faculty bahut experienced hai aur fees bhi bahut reasonable hai. Sabko recommend karungi!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#4a0e8f,#7b2d8b);color:#fff;">P</div>
+        <div class="testi-info">
+          <strong>Priya Devi</strong>
+          <span>Tally Graduate · Muzaffarpur</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"The Python course here is fantastic! I had zero coding experience but now I've built 3 real projects and landed a job as a junior developer. The mentorship and placement support is unmatched in Bihar."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;">A</div>
+        <div class="testi-info">
+          <strong>Amit Singh</strong>
+          <span>Python Graduate · Gaya</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Web Design course ne meri zindagi badal di. Ab main freelancing karta hoon aur ghar baithe ₹25,000+ kama raha hoon per month. Royal Institute ki wajah se mera sapna poora hua."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#614422,#c87533);color:#fff;">V</div>
+        <div class="testi-info">
+          <strong>Vijay Paswan</strong>
+          <span>Web Design Graduate · Bhagalpur</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"I completed my DCA course and used the certificate to qualify for a government job exam. The computer literacy certification helped me score extra marks. Thank you Royal Institute!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#1e3a5f,#0a4c7a);color:#fff;">S</div>
+        <div class="testi-info">
+          <strong>Sunita Kumari</strong>
+          <span>DCA Graduate · Nalanda</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"MS Office course yahan se kiya — sir ne bahut patience se sikhaya. Ab main apne school mein computer teacher hoon. Infrastructure bhi bahut acha hai, AC lab aur modern computers hain."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#8b0000,#c0392b);color:#fff;">M</div>
+        <div class="testi-info">
+          <strong>Mohan Lal</strong>
+          <span>MS Office Graduate · Darbhanga</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION BANNER -->
+<div id="admission">
+  <h2>Ready to Start Your Digital Journey?</h2>
+  <p>Join thousands of successful students. New batches starting every month. Limited seats available!</p>
+  <div class="admission-btns">
+    <a href="tel:+919999999999" class="btn-dark">📞 Call: +91 99999 99999</a>
+    <a href="#courses" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);color:var(--royal);padding:16px 36px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid rgba(26,26,46,0.2);transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+      View All Courses ✦
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">
+        <div class="footer-logo-icon">👑</div>
+        <div>
+          <strong>Royal Computer Institute</strong>
+          <small>Bihar's Premier Training Center</small>
+        </div>
+      </a>
+      <p class="footer-desc">
+        Empowering Bihar's youth with world-class computer education since 2005. 
+        Government-recognized certificates, expert faculty, and real placement support.
+      </p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">📘</a>
+        <a href="#" class="social-btn">📸</a>
+        <a href="#" class="social-btn">▶️</a>
+        <a href="#" class="social-btn">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#courses">Our Courses</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#testimonials">Student Reviews</a></li>
+        <li><a href="#admission">Admission</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Our Courses</h5>
+      <ul class="footer-links">
+        <li><a href="#courses">DCA</a></li>
+        <li><a href="#courses">ADCA</a></li>
+        <li><a href="#courses">Tally Prime</a></li>
+        <li><a href="#courses">MS Office</a></li>
+        <li><a href="#courses">Web Design</a></li>
+        <li><a href="#courses">Python</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <div class="footer-contact">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span class="contact-text">Near Station Road, Patna, Bihar – 800001</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <span class="contact-text">+91 99999 99999<br>+91 88888 88888</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-text">info@royalcomputerinstitute.in</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">⏰</span>
+          <span class="contact-text">Mon–Sat: 8:00 AM – 8:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 <strong>Royal Computer Institute</strong>. All Rights Reserved. Made with ❤️ for Bihar.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(26,26,46,0.99)';
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+    } else {
+      nav.style.background = 'rgba(26,26,46,0.97)';
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // Mobile menu toggle
+  let menuOpen = false;
+  function toggleMenu(btn) {
+    menuOpen = !menuOpen;
+    const links = document.querySelector('.nav-links');
+    const bars = btn.querySelectorAll('span');
+    if (menuOpen) {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(16,16,32,0.98);backdrop-filter:blur(16px);padding:24px 5% 32px;gap:6px;border-bottom:1px solid rgba(232,184,75,0.2);z-index:999;';
+      bars[0].style.cssText = 'transform:translateY(7px) rotate(45deg);transition:transform 0.25s;';
+      bars[1].style.cssText = 'opacity:0;transition:opacity 0.25s;';
+      bars[2].style.cssText = 'transform:translateY(-7px) rotate(-45deg);transition:transform 0.25s;';
+    } else {
+      links.style.display = 'none';
+      bars[0].style.cssText = '';
+      bars[1].style.cssText = '';
+      bars[2].style.cssText = '';
+    }
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!menuOpen) return;
+      menuOpen = false;
+      document.querySelector('.nav-links').style.display = 'none';
+      document.querySelectorAll('.nav-hamburger span').forEach(b => b.style.cssText = '');
+    });
+  });
+
+  // Animated counter
+  function animateCounter(el, target) {
+    let current = 0;
+    const step = target / 60;
+    const interval = setInterval(() => {
+      current = Math.min(current + step, target);
+      const num = el.querySelector('.stat-number');
+      if (num) {
+        const sup = num.querySelector('sup') ? num.querySelector('sup').outerHTML : '';
+        const prefix = num.querySelector('sup') ? num.querySelector('sup').textContent : '';
+        num.innerHTML = Math.floor(current) + sup;
+      }
+      if (current >= target) clearInterval(interval);
+    }, 16);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const cards = document.querySelectorAll('.stat-card');
+        const targets = [5000, 19, 98, 12];
+        cards.forEach((card, i) => animateCounter(card, targets[i]));
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  statsObserver.observe(document.getElementById('stats'));
+</script>
+</body>
 </html>
